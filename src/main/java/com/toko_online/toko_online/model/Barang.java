@@ -1,16 +1,18 @@
 package com.toko_online.toko_online.model;
 
+import com.toko_online.toko_online.editing.Auditable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "barang")
-public class Barang {
+public class Barang extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "price")
